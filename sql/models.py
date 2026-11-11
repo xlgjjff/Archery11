@@ -332,7 +332,7 @@ class SqlWorkflow(models.Model, WorkflowAuditMixin):
     存放各个SQL上线工单的基础内容
     """
 
-    workflow_name = models.CharField("工单内容", max_length=50)
+    workflow_name = models.CharField("工单内容", max_length=150)
     demand_url = models.CharField("需求链接", max_length=500, blank=True)
     group_id = models.IntegerField("组ID")
     group_name = models.CharField("组名称", max_length=100)
@@ -435,7 +435,7 @@ class WorkflowAudit(models.Model):
     group_name = models.CharField("组名称", max_length=100)
     workflow_id = models.BigIntegerField("关联业务id")
     workflow_type = models.IntegerField("申请类型", choices=WorkflowType.choices)
-    workflow_title = models.CharField("申请标题", max_length=50)
+    workflow_title = models.CharField("申请标题", max_length=150)
     workflow_remark = models.CharField(
         "申请备注", default="", max_length=140, blank=True
     )

@@ -6,3 +6,7 @@ INSERT INTO auth_permission (name, content_type_id, codename) VALUES ('菜单 �
 ALTER TABLE sql_instance ADD client_cert longtext COMMENT '客户端证书';
 ALTER TABLE sql_instance ADD client_key longtext COMMENT '客户端密钥';
 ALTER TABLE sql_instance ADD ca_cert longtext COMMENT 'CA证书';
+
+-- 工单说明和审批标题长度扩展到150，升级仍为varchar(50)的数据库时执行
+ALTER TABLE sql_workflow MODIFY workflow_name varchar(150) NOT NULL comment '工单说明';
+ALTER TABLE workflow_audit MODIFY workflow_title varchar(150) NOT NULL comment '工单说明';

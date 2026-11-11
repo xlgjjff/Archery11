@@ -351,7 +351,7 @@ def rollback(request):
     else:
         rollback_workflow_name = (
             f"【回滚工单】原工单Id:{workflow_id} ,{workflow.workflow_name}"
-        )
+        )[:150]
         context = {
             "workflow_detail": workflow,
             "rollback_workflow_name": rollback_workflow_name,

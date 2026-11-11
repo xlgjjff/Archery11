@@ -44,6 +44,7 @@
                                        class="form-control"
                                        data-name="导出工单名称" data-placeholder="请输入导出工单名称!"
                                        placeholder="请输入导出工单名称，如:XX项目会员数据导出"
+                                       maxlength="150"
                                        required>
                             </div>
                             <div class="form-group toggleable">
@@ -371,8 +372,8 @@
                         result = false;
                         return result;
                     }
-                    if(fieldId == "workflow_name" && value.length>=50){
-                        alert("导出工单名称不能超过50个字符！");
+                    if(fieldId == "workflow_name" && value.length>150){
+                        alert("导出工单名称不能超过150个字符！");
                         result = false;
                         return result;
                     }

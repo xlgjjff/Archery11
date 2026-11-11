@@ -29,6 +29,7 @@
                                        class="form-control"
                                        data-name="上线单名称" data-placeholder="请输入上线单名称!"
                                        placeholder="请输入上线单名称，如:XX项目会员功能建表"
+                                       maxlength="150"
                                        required>
                             </div>
                             <div class="form-group">
@@ -728,8 +729,8 @@
                         result = false;
                         return result;
                     }
-                    if(fieldId == "workflow_name" && value.length>=50){
-                        alert("上线单名称/工单名称不能超过50个字符！");
+                    if(fieldId == "workflow_name" && value.length>150){
+                        alert("上线单名称/工单名称不能超过150个字符！");
                         result = false;
                         return result;
                     }
